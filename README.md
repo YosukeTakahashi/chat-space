@@ -22,14 +22,24 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-## DB設計
-### users table
+# chat-space DB設計
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
 |mail|string|null: false|
-
+|password|string|null: false|
 ### Association
-- has_many :groups,through :members
+- has_many :groups
 - has_many :messages
-- has_many :members
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|text||
+|text|text||
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :groups
+
