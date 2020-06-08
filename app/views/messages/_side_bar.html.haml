@@ -2,13 +2,13 @@
   .side-bar__header
     .side-bar__header__box
       %p.side-bar__header__box__User-name
-        suke
+        = current_user.name
       %ul.side-bar__header__box__Main-menu
         %li.side-bar__header__box__Main-edit
           =link_to "#" do
             = icon('far', 'edit')
         %li.side-bar__header__box__Main-cog
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
   .side-bar__group
     .side-bar__group__box
