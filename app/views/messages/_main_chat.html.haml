@@ -1,0 +1,41 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info__left-box
+      %p.chat-main__group-info__left-box__carrent-group
+        test
+      %p.chat-main__group-info__left-box__member-list
+        Member:name
+    .chat-main__group-info__right-box
+      .chat-main__header__box-edit
+        = link_to '#' do
+          = "Edit"
+  
+  .chat-main__message-list
+    .chat-main__message-list__Userid
+      .chat-main__message-list__Userid__User-talk
+        %p.chat-main__message-list__Userid__User-talk__talker
+          suke
+        %p.chat-main__message-list__Userid__User-talk__talk-date
+          2020/06/06
+      .chat-main__message-list__Userid__User-Chat
+        %p.side-bar__hooter__box__User-chat
+          おはよう
+
+    .chat-main__message-list__Userid
+      .chat-main__message-list__Userid__User-talk
+        %p.chat-main__message-list__Userid__User-talk__talker
+          suke
+        %p.chat-main__message-list__Userid__User-talk__talk-date
+          2020/06/05
+      .chat-main__message-list__Userid__User-Chat
+        %p.side-bar__hooter__box__User-chat
+          今日は快晴
+      
+  .chat-main__message-form
+    %form.new-message
+      .input-box
+        %input.input-box__text{placeholder: "type a message", type: "text"}
+        %label{class: "input-box__image"}
+          = icon("fas", "image")
+          %input{class: "input-box__image__file", type: "file", name: "message[image]", id: "message_image"}
+    %input.submit-btn{type: "submit", name: "commit", value: "Send"}

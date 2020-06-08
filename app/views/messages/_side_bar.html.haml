@@ -1,0 +1,18 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header__box
+      %p.side-bar__header__box__User-name
+        suke
+      %ul.side-bar__header__box__Main-menu
+        %li.side-bar__header__box__Main-edit
+          =link_to "#" do
+            = icon('far', 'edit')
+        %li.side-bar__header__box__Main-cog
+          = link_to "#" do
+            = icon('fas', 'cog')
+  .side-bar__group
+    .side-bar__group__box
+      %p.side-bar__group__box__group-name
+        group1
+      %p.side-bar__group__box__group-message
+        hello
