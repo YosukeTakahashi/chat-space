@@ -2,12 +2,14 @@
   .chat-main__group-info
     .chat-main__group-info__left-box
       %p.chat-main__group-info__left-box__carrent-group
-        test
+        = @group.name
       %p.chat-main__group-info__left-box__member-list
-        Member:name
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .chat-main__group-info__right-box
       .chat-main__header__box-edit
-        = link_to '#' do
+        = link_to 'edit' do
           = "Edit"
   
   .chat-main__message-list
@@ -30,12 +32,15 @@
       .chat-main__message-list__Userid__User-Chat
         %p.side-bar__hooter__box__User-chat
           今日は快晴
-      
+
+  .MessageField
+  = render @messages
+  
   .chat-main__message-form
-    %form.new-message
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .input-box
-        %input.input-box__text{placeholder: "type a message", type: "text"}
-        %label{class: "input-box__image"}
-          = icon("fas", "image")
-          %input{class: "input-box__image__file", type: "file", name: "message[image]", id: "message_image"}
-    %input.submit-btn{type: "submit", name: "commit", value: "Send"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image', class: 'input-box__image__icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'

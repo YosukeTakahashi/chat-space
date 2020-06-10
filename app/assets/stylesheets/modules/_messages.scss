@@ -143,19 +143,23 @@
 
     &__message-form{
       display: flex;
+      justify-content: space-between;
       background-color: #d2d2d2;
       height: 90px;
       width: 100%;
-      padding: 20px 40px;
-      .new-message{
+      padding: 20px 50px 20px 40px;
+      .Form{
+        display: flex;
         width: 100%;
         padding-right: 15px;
       }
       .input-box{
         height: 50px;
+        width: 100%;
         background-color: white;
         border: none;
         position: relative;
+        margin-right: 15px;
         &__text{
           height: 50px;
           width: 100%;
@@ -171,16 +175,16 @@
           display: none;
         }
       }
+          .submit-btn{
+            width: 100px;
+            height: 50px;
+            padding: 0 25px;
+            margin-left: 15px;
+            background-color: #38aef0;
+            border: none;
+            color: white;
+            cursor: pointer;
+          }         
     }
-        .submit-btn{
-          width: 100px;
-          height: 50px;
-          padding: 0 25px;
-          margin-left: 15px;
-          background-color: #38aef0;
-          border: none;
-          color: white;
-          cursor: pointer;
-        }         
   }
 }
