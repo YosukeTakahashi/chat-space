@@ -12,29 +12,29 @@
         = link_to 'edit' do
           = "Edit"
   
+  -# .chat-main__message-list
+  -#   .chat-main__message-list__Userid
+  -#     .chat-main__message-list__Userid__User-talk
+  -#       %p.chat-main__message-list__Userid__User-talk__talker
+  -#         suke
+  -#       %p.chat-main__message-list__Userid__User-talk__talk-date
+  -#         2020/06/06
+  -#     .chat-main__message-list__Userid__User-Chat
+  -#       %p.side-bar__hooter__box__User-chat
+  -#         おはよう
+
+  -#   .chat-main__message-list__Userid
+  -#     .chat-main__message-list__Userid__User-talk
+  -#       %p.chat-main__message-list__Userid__User-talk__talker
+  -#         suke
+  -#       %p.chat-main__message-list__Userid__User-talk__talk-date
+  -#         2020/06/05
+  -#     .chat-main__message-list__Userid__User-Chat
+  -#       %p.side-bar__hooter__box__User-chat
+  -#         今日は快晴
+
   .chat-main__message-list
-    .chat-main__message-list__Userid
-      .chat-main__message-list__Userid__User-talk
-        %p.chat-main__message-list__Userid__User-talk__talker
-          suke
-        %p.chat-main__message-list__Userid__User-talk__talk-date
-          2020/06/06
-      .chat-main__message-list__Userid__User-Chat
-        %p.side-bar__hooter__box__User-chat
-          おはよう
-
-    .chat-main__message-list__Userid
-      .chat-main__message-list__Userid__User-talk
-        %p.chat-main__message-list__Userid__User-talk__talker
-          suke
-        %p.chat-main__message-list__Userid__User-talk__talk-date
-          2020/06/05
-      .chat-main__message-list__Userid__User-Chat
-        %p.side-bar__hooter__box__User-chat
-          今日は快晴
-
-  .MessageField
-  = render @messages
+    = render @messages
   
   .chat-main__message-form
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|

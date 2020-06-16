@@ -8,10 +8,9 @@
 
   .side-bar{
     width: 300px;
-    background-color: #253141;
     &__header{
       height: 100px;
-      width: 300px;
+      padding: 0 20px;
       background-color: #253141;
       display: flex;
       align-items: center;
@@ -20,7 +19,6 @@
         width: 260px;
         color: #ffffff;
         font-weight: bold;
-        margin: 0 20px;
         display: flex;
         justify-content: space-between;
         &__Main-menu{
@@ -29,7 +27,8 @@
             margin-left: 5px;
             a{
               text-decoration: none;
-              color: #ffffff;
+              color: #fff;
+              font-size: 16px;
             }
           }
         }
@@ -39,11 +38,18 @@
     &__group{
       height: calc(100vh - 100px);
       background-color: #2f3e51;
-      padding: 20px 20px 0;
+      padding: 0px 20px;
+      overflow: scroll;
+      
       &__box{
         margin-bottom: 40px ;
         color: #ffffff;
         font-weight: bold;
+        box-sizing: border-box;
+        a{
+          color: #fff;
+          text-decoration: none;
+        }
         &__group-name{
           font-size: 15px;
           margin-bottom: 5px;
@@ -59,7 +65,6 @@
   .chat-main{
     width: calc(100vw - 300px);
     background-color: #ffffff;
-    
     &__group-info{
       height: 100px;
       background-color: #ffffff;
@@ -67,6 +72,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 40px;
+      border-bottom: solid 1px #eee;
       &__left-box{
         margin-top: 35px;
         &__carrent-group{
@@ -93,28 +99,36 @@
     }
 
     &__message-list{
-      height: calc(100vh - 190px);
+      box-sizing: border-box;
+      height: calc(100vh - 100px - 90px);
+      overflow: scroll;
       background-color: #fafafa;
-      padding: 35px 0 46px 40px;
+      padding: 35px 40px 0px;
       &__Userid{
-        padding-bottom: 46px;
+        margin-bottom: 46px;
         &__User-talk{
           display: flex;
-          padding-bottom: 12px;
           &__talker{
-            color: #333333;
+            color: #434a54;
             font-size: 16px;
-            display: flex;
+            font-weight: bold;
           }
         
           &__talk-date{
             color: #999999;
             font-size: 12px;
+            padding-left: 10px;
           }
         }
         &__User-Chat{
-          color: #434a54;
-          font-size: 14px;
+          margin-top: 12px;
+          &__content {
+            color: #434a54;
+            font-size: 14px;
+          }
+          &__image{
+            height: 300px;
+          }
         }
       }
       &__Userid{
