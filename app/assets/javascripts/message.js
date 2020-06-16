@@ -18,24 +18,6 @@ $(function(){
             <img class="Message__image" src="${message.image}">
           </div>
         </div>`
-
-
-        // `<div class="MessageBox">
-        //   <div class="MessageInfo">
-        //     <div class="MessageInfo__userName">
-        //       ${message.user_name}
-        //     </div>
-        //     <div class="MessageInfo__date">
-        //       ${message.created_at}
-        //     </div>
-        //   </div>
-        //   <div class="Message">
-        //     <p class="Message__content">
-        //       ${message.content}
-        //     </p>
-        //     <img class="Message__image" src="${message.image}">
-        //   </div>
-        // </div>`
       return html;
     } else {
       let html =
@@ -54,21 +36,6 @@ $(function(){
             </p>
           </div>
         </div>`
-      // `<div class="MessageBox">
-      //   <div class="MessageInfo">
-      //     <div class="MessageInfo__userName">
-      //       ${message.user_name}
-      //     </div>
-      //     <div class="MessageInfo__date">
-      //       ${message.created_at}
-      //     </div>
-      //   </div>
-      //   <div class="Message">
-      //     <p class="Message__content">
-      //       ${message.content}
-      //     </p>
-      //   </div>
-      // </div>`
       return html;
     };
   }
@@ -95,8 +62,5 @@ $(function(){
     .fail(function() {
       alert("メッセージ送信に失敗しました");
     })
-    // .always(function(){
-
-    // })
   });
 });
