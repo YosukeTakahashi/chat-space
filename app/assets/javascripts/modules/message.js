@@ -2,26 +2,28 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="chat-main__message-list__Userid">
-          <div class="chat-main__message-list__Userid__User-talk">
-            <div class="chat-main__message-list__Userid__User-talk__talker">
-              ${message.user_name}
+        `<div class="MessageBox" data-message-id=${message.id}>
+          <div class="chat-main__message-list__Userid">
+            <div class="chat-main__message-list__Userid__User-talk">
+              <div class="chat-main__message-list__Userid__User-talk__talker">
+                ${message.user_name}
+              </div>
             </div>
-          </div>
-          <div class="chat-main__message-list__Userid__talk-date">
-            ${message.created_at}
-          </div>
-          <div class="chat-main__message-list__Userid__User-Chat">
-            <p class="Message__content">
-              ${message.content}
-            </p>
-            <img class="Message__image" src="${message.image}">
-          </div>
-        </div>`
-      return html;
+            <div class="chat-main__message-list__Userid__talk-date">
+              ${message.created_at}
+            </div>
+            <div class="chat-main__message-list__Userid__User-Chat">
+              <p class="Message__content">
+                ${message.content}
+              </p>
+              <img class="Message__image" src="${message.image}">
+            </div>
+          </div>`
+        return html;
     } else {
       let html =
-        `<div class="chat-main__message-list__Userid">
+      `<div class="MessageBox" data-message-id=${message.id}>
+        <div class="chat-main__message-list__Userid">
           <div class="chat-main__message-list__Userid__User-talk">
             <div class="chat-main__message-list__Userid__User-talk__talker">
               ${message.user_name}
