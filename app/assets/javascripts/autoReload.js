@@ -2,49 +2,48 @@ $(function(){
     function buildHTML(message){
       if ( message.image ) {
         let html =
-          `<div class="MessageBox" data-message-id=${message.id}>
-            <div class="chat-main__message-list__Userid">
-              <div class="chat-main__message-list__Userid__User-talk">
-                <div class="chat-main__message-list__Userid__User-talk__talker">
-                  ${message.user_name}
-                </div>
-              </div>
-              <div class="chat-main__message-list__Userid__talk-date">
-                ${message.created_at}
-              </div>
-              <div class="chat-main__message-list__Userid__User-Chat">
-                <p class="Message__content">
-                  ${message.content}
-                </p>
-                <img class="Message__image" src="${message.image}">
-              </div>
-            </div>`
-          return html;
-      } else {
-        let html =
-        `<div class="MessageBox" data-message-id=${message.id}>
-          <div class="chat-main__message-list__Userid">
-            <div class="chat-main__message-list__Userid__User-talk">
-              <div class="chat-main__message-list__Userid__User-talk__talker">
-                ${message.user_name}
-              </div>
-            </div>
-            <div class="chat-main__message-list__Userid__talk-date">
-              ${message.created_at}
-            </div>
-            <div class="chat-main__message-list__Userid__User-Chat">
-              <p class="Message__content">
-                ${message.content}
-              </p>
-            </div>
-          </div>`
-        return html;
+        `<div class="chat-main__message-list__userid" data-message-id=${message.id}>
+        <div class="chat-main__message-list__userid__user-talk">
+          <div class="chat-main__message-list__userid__user-talk__talker">
+            ${message.user_name}
+          </div>
+          <div class="chat-main__message-list__userid__talk-date">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="chat-main__message-list__user-Chat">
+          <p class="Message__content">
+            ${message.content}
+          </p>
+          <img class="Message__image" src="${message.image}">
+        </div>
+      </div>`
+      return html;
+    } else {
+      let html =
+      `<div class="chat-main__message-list__userid" data-message-id=${message.id}>
+        <div class="chat-main__message-list__userid__user-talk">
+          <div class="chat-main__message-list__userid__user-talk__talker">
+            ${message.user_name}
+          </div>
+          <div class="chat-main__message-list__talk-date">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="chat-main__message-list__userid__user-Chat">
+          <p class="Message__content">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
+      return html;
       };
     }
 
-  let reloadMessages = function() {
+  var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    let last_message_id = $('.chat-main__message-list:last').data("message-id");
+    let last_message_id = $('.chat-main__message-list__userid:last').data("message-id")
+    console.log(last_message_id)
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: "api/messages",

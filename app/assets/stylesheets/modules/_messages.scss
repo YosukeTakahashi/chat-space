@@ -104,9 +104,9 @@
       overflow: scroll;
       background-color: #fafafa;
       padding: 35px 40px 0px;
-      &__Userid{
+      &__userid{
         margin-bottom: 46px;
-        &__User-talk{
+        &__user-talk{
           display: flex;
           &__talker{
             color: #434a54;
@@ -120,36 +120,15 @@
             padding-left: 10px;
           }
         }
-        &__User-Chat{
+        &__user-Chat{
           margin-top: 12px;
           &__content {
             color: #434a54;
             font-size: 14px;
           }
-          &__image{
-            height: 300px;
-          }
-        }
-      }
-      &__Userid{
-        padding-bottom: 46px;
-        &__User-talk{
-          display: flex;
-          padding-bottom: 12px;
-          &__talker{
-            color: #333333;
-            font-size: 16px;
-            display: flex;
-          }
-        
-          &__talk-date{
-            color: #999999;
-            font-size: 12px;
-          }
-        }
-        &__User-Chat{
-          color: #434a54;
-          font-size: 14px;
+          // &__image{
+          //   height: 300px;
+          // }
         }
       }
     }
